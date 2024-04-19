@@ -1,6 +1,4 @@
 import graphviz
-import csv
-import time
 
 class nodoArbol:
     def __init__(self, valor):

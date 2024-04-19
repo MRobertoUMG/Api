@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
+    def index():
     return jsonify({'respuesta':'done'}),200
 '''
 @app.route('/saludar/<nombre>', methods=['GET'])
@@ -16,7 +16,7 @@ def saludar(nombre):
 
 #----------------------------------------------
 @app.route('/show/<user_id>', methods=['GET'])
-def show(user_id):sd
+    def show(user_id):sd
     user = {"id" : user_id, "name": "test", "telefono": "58513753"}
     query  = request.args.get('query')
     if query:
@@ -24,13 +24,13 @@ def show(user_id):sd
     return jsonify(user), 200
 
 @app.route('/create', methods=['POST'])
-def create():
+    def create():
     data = request.get_json()
     data["status"] = 'user crated'
     return jsonify(data), 201
 
 @app.route('/upload', methods=['POST'])
-def upload():
+    def upload():
     class UploadCSV(Resource):
         def post(self):
             file = request.files['file']
